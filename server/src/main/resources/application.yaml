@@ -8,7 +8,11 @@ spring:
         git:
           uri: https://github.com/hstha/app-configuration
 
-
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 
 server:
   port: 8080
