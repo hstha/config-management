@@ -7,8 +7,6 @@ spring:
       server:
         git:
           uri: https://github.com/hstha/app-configuration
-          username: ${GIT_USERNAME}
-          password: ${GIT_PASSWORD}
 
 management:
   endpoints:
@@ -18,3 +16,10 @@ management:
 
 server:
   port: 8080
+
+encrypt:
+#  key: ${ENCRYPTION_KEY} # AES Encryption
+  key-store: # RSA Encryption
+    location: config-server.jks
+    password: ${ENCRYPTION_PASSWORD}
+    alias: config-server-key
