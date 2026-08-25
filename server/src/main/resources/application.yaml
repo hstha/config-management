@@ -2,11 +2,14 @@ spring:
   application:
     name: server
 
+  profiles:
+    active: native
+
   cloud:
     config:
       server:
-        git:
-          uri: https://github.com/hstha/app-configuration
+        native:
+          search-locations: ${CONFIG_PATH}
 
 management:
   endpoints:
